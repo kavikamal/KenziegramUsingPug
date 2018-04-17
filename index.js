@@ -26,10 +26,15 @@ app.use(express.static('./public/uploads/'));
 app.use(express.static('./public/static/'));
 app.set('views', './public/views')
 app.set('view engine', 'pug')
+
 app.get('/home', (req, res, next)=> {
     const path = 'public/uploads/';
     fs.readdir(path, function(err, items) {  
-        console.log(items);      
+        console.log(items);   
+        items.sort(function(a, b) {
+            return fs.statSync(path + b).mtime.getTime() - 
+                   fs.statSync(path + a).mtime.getTime();
+        });   
         res.render('index', { 
             title: 'Kenziegram', 
             images: items
