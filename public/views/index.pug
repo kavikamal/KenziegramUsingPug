@@ -1,0 +1,23 @@
+html
+  head
+    title= title
+    link(rel="stylesheet", href="index.css")
+  body
+    h1(class) Kenziegram
+     class= "headingclass"
+    form(action="http://localhost:3000/upload", method="post", enctype="multipart/form-data") 
+        div
+            label(for="myfile") Select a file to upload
+            input(type="file", name="myfile", id="myfile")
+            button(type="submit") Upload
+            br
+            br
+    if images != null
+        each image in images
+            img(src=image, class='galleria')
+            br
+            br
+
+        
+    
+        
