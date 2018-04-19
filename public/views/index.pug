@@ -2,6 +2,7 @@ html
   head
     title= title
     link(rel="stylesheet", href="index.css")
+   
   body
     h1(class= "headingclass") Kenziegram
      
@@ -12,12 +13,15 @@ html
             button(type="submit") Upload
             br
             br
-    if images != null
-        each image in images
-            img(src=image, class='galleria')
-            br
-            br
-
+        div(id="imagesdiv")    
+          if images != null
+              each image in images
+                  img(src=image, class='galleria')
+                  br
+    //- input(type="hidden", name="timestamp", id="timestamp" value=timestamp)
+    script(src="main.js")
+    script tstamp= #{after}
+    
         
     
         
