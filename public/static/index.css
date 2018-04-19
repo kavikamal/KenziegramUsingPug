@@ -2,8 +2,15 @@
     max-width: 200px;
     height: 200px;
     margin: 0 auto;
+    padding: 10px;
 }
 .headingclass{
 background-color: mediumaquamarine;
 
 }
+/* img{
+    max-width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    padding: 10px;
+} */
