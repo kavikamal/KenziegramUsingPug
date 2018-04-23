@@ -1,5 +1,3 @@
-
-//const tstamp = document.getElementById("timestamp");
 var tstamp=Date.now();
 var errCount=0;
 var fetchImageTimer;
@@ -44,6 +42,7 @@ function handleErrors(response) {
     if (!response.ok) {
         throw Error(response.statusText);
     }
+    errCount=0;
     return response;
 }
 
